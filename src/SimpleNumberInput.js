@@ -32,8 +32,8 @@
     function fConstructor(oConf){
         this.config =  oConf = oConf || {};
         this.target = oConf.target;
-        this.step = oConf.step || 1;
         this.unit = oConf.unit || 1;
+        this.step = oConf.step || this.unit;
         this.init();
         return this;
     }
@@ -71,6 +71,7 @@
 
     function fSetValue(nValue) {
         this.value = nValue || 0;
+        this.value = this.value - (this.value % this.unit);
         if(nValue > this.max){
             this.value = this.max;
         }
