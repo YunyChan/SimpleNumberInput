@@ -1,4 +1,4 @@
-# SimpleNumberInput [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/YunyChan/SimpleNumberInput/blob/master/LICENSE) #
+# SimpleNumberInput [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/YunyChan/SimpleNumberInput/blob/master/LICENSE) #
 
 一个简易带加减按钮的数字输入组件
 
