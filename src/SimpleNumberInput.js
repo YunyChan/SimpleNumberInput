@@ -50,10 +50,10 @@
         var that = this;
         Helper.listenEvent(this.target, 'click', function (oEvent) {
             var oClickDom = oEvent.target || oEvent.srcElement;
-            if(/simple-number-input-min/.test(oClickDom.className)){
+            if(/simple-number-input-btn-min/.test(oClickDom.className)){
                 that.onBtnMinClick();
             }
-            if(/simple-number-input-add/.test(oClickDom.className)){
+            if(/simple-number-input-btn-add/.test(oClickDom.className)){
                 that.onBtnAddClick();
             }
         });
@@ -84,19 +84,21 @@
     function fRender() {
         this.btnMin = oDoc.createElement('button');
         this.btnMin.innerHTML = '-';
-        this.btnMin.className = 'simple-number-input-min';
+        this.btnMin.className = 'simple-number-input-btn simple-number-input-btn-min';
 
         this.btnAdd = oDoc.createElement('button');
-        this.btnAdd.className = 'simple-number-input-add';
+        this.btnAdd.className = 'simple-number-input-btn simple-number-input-btn-add';
         this.btnAdd.innerHTML = '+';
 
         this.input = oDoc.createElement('input');
         this.input.className = 'simple-number-input-num';
+        this.input.type = 'text';
         this.input.value = this.value;
 
         this.target.appendChild(this.btnMin);
         this.target.appendChild(this.input);
         this.target.appendChild(this.btnAdd);
+        this.target.className += (this.target.className == ''? '' : ' ') + 'simple-number-input';
     }
 
     function fOnBtnMinClick() {
@@ -116,16 +118,16 @@
 
     function fCheckBoundary() {
         if(this.value == this.min){
-            this.btnMin.className = 'simple-number-input-min simple-number-input-min-disable';
+            this.btnMin.className = 'simple-number-input-btn simple-number-input-btn-disable simple-number-input-btn-min';
         }
         if(this.value == this.max){
-            this.btnAdd.className = 'simple-number-input-add simple-number-input-add-disable';
+            this.btnAdd.className = 'simple-number-input-btn simple-number-input-btn-disable simple-number-input-btn-add';
         }
         if(this.value < this.max){
-            this.btnAdd.className = 'simple-number-input-add';
+            this.btnAdd.className = 'simple-number-input-btn simple-number-input-btn-add';
         }
         if(this.value > this.min){
-            this.btnMin.className = 'simple-number-input-min';
+            this.btnMin.className = 'simple-number-input-btn simple-number-input-btn-min';
         }
     }
 
