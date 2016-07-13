@@ -39,6 +39,7 @@
 + `max` - _default: 0_, 最大值
 + `step` - _default: 1_, 数值步进幅度
 + `unit` - _default: 1_, 数值单位长度
++ `onChange` - _default: null_, 数值变化后的回调方法
 
 ## 作者 ##
 

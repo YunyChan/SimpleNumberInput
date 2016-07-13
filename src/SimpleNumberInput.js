@@ -34,6 +34,7 @@
         this.target = oConf.target;
         this.unit = oConf.unit || 1;
         this.step = oConf.step || this.unit;
+        this.onChange = oConf.onChange || null;
         this.init();
         return this;
     }
@@ -104,16 +105,19 @@
     function fOnBtnMinClick() {
         this.input.value = this.setValue(this.value - this.step);
         this.checkBoundary();
+        this.onChange && this.onChange(this.value);
     }
 
     function fOnBtnAddClick() {
         this.input.value = this.setValue(this.value + this.step);
         this.checkBoundary();
+        this.onChange && this.onChange(this.value);
     }
 
     function fOnInputBlur() {
         this.input.value = this.setValue(this.input.value);
         this.checkBoundary();
+        this.onChange && this.onChange(this.value);
     }
 
     function fCheckBoundary() {
