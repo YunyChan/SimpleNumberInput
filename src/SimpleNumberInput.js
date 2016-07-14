@@ -22,6 +22,7 @@
     SimpleNumberInput.prototype.init = fInit;
     SimpleNumberInput.prototype.initEvents = fInitEvents;
     SimpleNumberInput.prototype.initBoundary = fInitBoundary;
+    SimpleNumberInput.prototype.getValue = fGetValue;
     SimpleNumberInput.prototype.setValue = fSetValue;
     SimpleNumberInput.prototype.render = fRender;
     SimpleNumberInput.prototype.onBtnMinClick = fOnBtnMinClick;
@@ -70,6 +71,10 @@
         this.max = nMin > nMax ? nMin : nMax;
     }
 
+    function fGetValue() {
+        return this.value;
+    }
+    
     function fSetValue(nValue) {
         this.value = nValue || 0;
         this.value = this.value - (this.value % this.unit);

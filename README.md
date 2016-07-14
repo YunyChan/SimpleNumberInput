@@ -34,12 +34,17 @@
 下面是组件的配置参数说明：
 
 + `target` - __必须__, 需要插入组件的dom元素
-+ `value` - _default: 0_, 数字输入框默认值
-+ `min` - _default: 0_, 最小值
-+ `max` - _default: 0_, 最大值
-+ `step` - _default: 1_, 数值步进幅度
-+ `unit` - _default: 1_, 数值单位长度
-+ `onChange` - _default: null_, 数值变化后的回调方法
++ `value` - _可选[number]: 0_, 数字输入框默认值
++ `min` - _可选[number]: 0_, 最小值
++ `max` - _可选[number]: 0_, 最大值
++ `step` - _可选[number]: 1_, 数值步进幅度
++ `unit` - _可选[number]: 1_, 数值单位长度
++ `onChange` - _可选[function]: null_, 数值变化后的回调方法
+
+APIs
+
+* `getValue()` - 获取输入框数值
+* `setValue(Number)` - 设置输入框数值
 
 ## 作者 ##
 
